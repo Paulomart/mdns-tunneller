@@ -49,7 +49,8 @@ export class Firewall {
       return whitelistedServices.some((serviceName) => {
         return question.name === serviceName
           || question.name === `${serviceName}.`
-          || question.name.endsWith(`.${serviceName}`);
+          || question.name.endsWith(`.${serviceName}`)
+          || question.name.endsWith(`.${serviceName}.`);
       });
     })) {
       debug('ALLOW: QUESTION IN SERVICE WHITELIST');
@@ -62,7 +63,8 @@ export class Firewall {
       return whitelistedServices.some((serviceName) => {
         return answer.name === serviceName
           || answer.name === `${serviceName}.`
-          || answer.name.endsWith(`.${serviceName}`);
+          || answer.name.endsWith(`.${serviceName}`)
+          || answer.name.endsWith(`.${serviceName}.`);
       });
     })) {
       debug('ALLOW: ANSWER IN SERVICE WHITELIST');
